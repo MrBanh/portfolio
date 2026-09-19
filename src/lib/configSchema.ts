@@ -12,7 +12,11 @@ export const dotcvConfigSchema = z.object({
       filename: z.string().optional(),
     })
     .optional()
-    .default({}),
+    .default({
+      format: "a4",
+      showAtsButton: true,
+      showDesignButton: true,
+    }),
 });
 
 export type DotcvConfig = z.infer<typeof dotcvConfigSchema>;
